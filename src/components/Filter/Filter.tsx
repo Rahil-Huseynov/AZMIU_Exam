@@ -43,10 +43,10 @@ const Filter = () => {
     const getMostSoldProduct = () => {
         const productSales: Record<string, number> = {};
 
-        filteredProducts.forEach((item:any) => {
-            item.product.forEach((product:any) => {
+        filteredProducts.forEach((item: any) => {
+            item.product.forEach((product: any) => {
                 if (productSales[product.name]) {
-                    productSales[product.name] += item.amount; 
+                    productSales[product.name] += item.amount;
                 } else {
                     productSales[product.name] = item.amount;
                 }
@@ -54,60 +54,60 @@ const Filter = () => {
         });
 
         return Object.entries(productSales).reduce((max, product) =>
-            product[1] > max[1] ? product : max, ['', 0] as [string, number])[0]; 
+            product[1] > max[1] ? product : max, ['', 0] as [string, number])[0];
     };
 
     const getDayWithHighestSales = () => {
         const dateSales: Record<string, number> = {};
 
-        filteredProducts.forEach((item:any) => {
+        filteredProducts.forEach((item: any) => {
             const date = formatDate(item.date);
             if (dateSales[date]) {
-                dateSales[date] += item.amount; 
+                dateSales[date] += item.amount;
             } else {
                 dateSales[date] = item.amount;
             }
         });
 
         return Object.entries(dateSales).reduce((max, date) =>
-            date[1] > max[1] ? date : max, ['', 0] as [string, number])[0]; 
+            date[1] > max[1] ? date : max, ['', 0] as [string, number])[0];
     };
 
     return (
         <>
-        <div className='navbar_container'>
-            <p className='dashboard'>Dashboard</p>
-            <p className='home'>Home</p>
-        </div>
-            <div className='AllItemContainer'>
-                <div className='AllFilteriItem'>
-                    <div className='filter_inputs'>
-                        <input
-                            className='filter_inputs_items'
-                            type="text"
-                            placeholder="Search Product"
-                            value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}
-                        />
-                        <input
-                            className='filter_inputs_items'
-                            type="number"
-                            placeholder="Order Amount"
-                            value={orderAmount}
-                            onChange={(e) => setOrderAmount(e.target.value)}
-                        />
-                        <input
-                            className='filter_inputs_items'
-                            type="date"
-                            value={orderDate}
-                            onChange={(e) => setOrderDate(e.target.value)}
-                        />
-                        <button className="filter-button">
-                            Filtrlə
-                        </button>
-                    </div>
-                    <div className='items_container'>
-                        <div>
+            <div className='navbar_container'>
+                <p className='dashboard'>Dashboard</p>
+                <p className='home'>Home</p>
+            </div>
+            <div className='items_container'>
+                <div>
+                    <div className='AllItemContainer'>
+                        <div className='AllFilteriItem'>
+                            <div className='filter_inputs'>
+                                <input
+                                    className='filter_inputs_items'
+                                    type="text"
+                                    placeholder="Search Product"
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                />
+                                <input
+                                    className='filter_inputs_items'
+                                    type="number"
+                                    placeholder="Order Amount"
+                                    value={orderAmount}
+                                    onChange={(e) => setOrderAmount(e.target.value)}
+                                />
+                                <input
+                                    className='filter_inputs_items'
+                                    type="date"
+                                    value={orderDate}
+                                    onChange={(e) => setOrderDate(e.target.value)}
+                                />
+                                <button className="filter-button">
+                                    Filtrlə
+                                </button>
+                            </div>
                             <table>
                                 <thead>
                                     <tr>
@@ -137,8 +137,8 @@ const Filter = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <div>
-                            <div style={{ width: '700px', height: '400px' }}>
+                        <div className='Line_all_container'>
+                            <div className='line'>
                                 <p>Statistika (Son 1 ay)</p>
                                 <p>Ən çox satılan məhsul: {getMostSoldProduct()}</p>
                                 <p>Ən çox satış olan gün: {getDayWithHighestSales()}</p>
