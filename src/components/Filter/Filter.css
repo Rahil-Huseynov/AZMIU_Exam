@@ -1,0 +1,82 @@
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table{
+  width: 630px;
+}
+td, th {
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+.name_product{
+  width: 300px;
+  text-align: left;
+}
+.name_product_items{
+  padding-left: .5rem;
+}
+.date_product{
+  width: 100px;
+  text-align: center;
+}
+.order_product{
+  width: 120px;
+  text-align: center;
+}
+.price_product{
+  width: 100px;
+  text-align: center;
+}
+
+.order_product_items{
+  text-align: center;
+}
+.filter_inputs_items{
+  height: 30px;
+  width: 180px;
+}
+
+.AllFilteriItem {
+  display: grid;
+  gap: 2rem;
+}
+
+.filter-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.filter_inputs{
+  width: 630px;
+}
+
+
+.items_container{
+  display: flex;
+  gap: 2rem;
+}
+.AllItemContainer{
+  display: grid;
+  place-items: center;
+}
+.navbar_container{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  color: #075395;
+  background-color: #F8F9FA;
+}
+.dashboard{
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+.home{
+  cursor: pointer;
+}
+
